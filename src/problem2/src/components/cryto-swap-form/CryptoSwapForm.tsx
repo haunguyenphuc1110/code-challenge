@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./CryptoSwapForm.css";
-import CryptoSlippageSelector from "../crypto-slippage-selector/CryptoSlippageSelector";
-import CryptoTokenInput from "../crypto-token-input/CryptoTokenInput";
-import { CryptoTokenInputType } from "../../constants/CryptoEnum";
-import type { SwapState, Token } from "../../models/Crypto";
-import TrendingUpIcon from "../../assets/trending-up.svg?react";
-import AlertCircleIcon from "../../assets/alert-circle.svg?react";
-import CheckCircleIcon from "../../assets/check-circle.svg?react";
+import CryptoSlippageSelector from "@/components/crypto-slippage-selector/CryptoSlippageSelector";
+import CryptoTokenInput from "@/components/crypto-token-input/CryptoTokenInput";
+import { CryptoTokenInputType } from "@/constants/CryptoEnum";
+import type { SwapState, Token } from "@/models/Crypto";
+import TrendingUpIcon from "@/assets/trending-up.svg?react";
+import AlertCircleIcon from "@/assets/alert-circle.svg?react";
+import CheckCircleIcon from "@/assets/check-circle.svg?react";
 
-import CryptoSwapExchangeButton from "../crypto-swap-exchange-button/CryptoSwapExchangeButton";
-import CryptoSwapTokenButton from "../crypto-swap-token-button/CryptoSwapTokenButton";
-import CryptoTokenSelector from "../crypto-token-selector/CryptoTokenSelector";
+import CryptoSwapExchangeButton from "@/components/crypto-swap-exchange-button/CryptoSwapExchangeButton";
+import CryptoSwapTokenButton from "@/components/crypto-swap-token-button/CryptoSwapTokenButton";
+import CryptoTokenSelector from "@/components/crypto-token-selector/CryptoTokenSelector";
 
-import { createTokens } from "../../utils/tokenUtils";
+import { createTokens } from "@/utils/tokenUtils";
 
 const MOCK_TOKENS: Token[] = createTokens();
 

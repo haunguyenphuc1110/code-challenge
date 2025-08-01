@@ -1,5 +1,5 @@
 import React from "react";
-import type { Token } from "../../models/Crypto";
+import type { Token } from "@/models/Crypto";
 import "./TokenIcon.css";
 
 interface TokenIconProps {

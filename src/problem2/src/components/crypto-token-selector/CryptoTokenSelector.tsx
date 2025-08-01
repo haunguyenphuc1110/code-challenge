@@ -1,7 +1,7 @@
 import React from "react";
 import "./CryptoTokenSelector.css";
-import type { Token } from "../../models/Crypto";
-import TokenIcon from "../token-icon/TokenIcon";
+import type { Token } from "@/models/Crypto";
+import TokenIcon from "@/components/token-icon/TokenIcon";
 
 type Props = {
   tokens: Token[];

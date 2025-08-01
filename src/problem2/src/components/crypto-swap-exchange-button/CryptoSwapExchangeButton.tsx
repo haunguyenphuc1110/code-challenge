@@ -1,6 +1,6 @@
 import React from "react";
 import "./CryptoSwapExchangeButton.css";
-import SwapVerticalIcon from "../../assets/swap-vertical.svg?react";
+import SwapVerticalIcon from "@/assets/swap-vertical.svg?react";
 
 type Props = {
   handleTokenSwap: () => void;
