@@ -18,33 +18,44 @@ const CryptoTokenSelector: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className='token-selector-overlay'
+      className='crypto-token-selector'
       onClick={() => setShowTokenSelector(null)}
     >
-      <div className='token-selector-modal' onClick={e => e.stopPropagation()}>
+      <div
+        className='crypto-token-selector__modal'
+        onClick={e => e.stopPropagation()}
+      >
         <h3>Select Token</h3>
-        <div className='token-list'>
+        <div className='crypto-token-selector__list'>
           {tokens.map(token => (
             <button
               key={token.symbol}
-              className='token-option'
+              className='crypto-token-selector__option'
               onClick={() => handleTokenSelect(token)}
             >
               <TokenIcon
                 token={token}
                 size={48}
-                className='token-option-icon'
+                className='crypto-token-selector__option-icon'
               />
-              <div className='token-details'>
-                <div className='token-main-info'>
-                  <div className='token-identity'>
-                    <span className='token-symbol'>{token.symbol}</span>
-                    <span className='token-name'>{token.name}</span>
+
+              <div className='crypto-token-selector__details'>
+                <div className='crypto-token-selector__main-info'>
+                  <div className='crypto-token-selector__identity'>
+                    <span className='crypto-token-selector__symbol'>
+                      {token.symbol}
+                    </span>
+                    <span className='crypto-token-selector__name'>
+                      {token.name}
+                    </span>
                   </div>
+
                   {!!token.change24h && (
                     <span
-                      className={`token-change ${
-                        token.change24h >= 0 ? 'positive' : 'negative'
+                      className={`crypto-token-selector__change ${
+                        token.change24h >= 0
+                          ? 'crypto-token-selector__change--positive'
+                          : 'crypto-token-selector__change--negative'
                       }`}
                     >
                       {token.change24h >= 0 ? '+' : ''}
@@ -52,23 +63,28 @@ const CryptoTokenSelector: React.FC<Props> = ({
                     </span>
                   )}
                 </div>
-                <div className='token-financial-info'>
-                  <div className='token-balance'>
-                    <span className='balance-amount'>
+
+                <div className='crypto-token-selector__financial-info'>
+                  <div className='crypto-token-selector__balance'>
+                    <span className='crypto-token-selector__balance-amount'>
                       {token.balance.toFixed(4)}
                     </span>
-                    <span className='balance-symbol'>{token.symbol}</span>
+                    <span className='crypto-token-selector__balance-symbol'>
+                      {token.symbol}
+                    </span>
                   </div>
-                  <div className='token-price-info'>
-                    <span className='token-price'>
+
+                  <div className='crypto-token-selector__price-info'>
+                    <span className='crypto-token-selector__price'>
                       $
                       {token.price.toLocaleString(undefined, {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: token.price >= 1 ? 2 : 6,
                       })}
                     </span>
+
                     {token.marketCap && (
-                      <span className='token-market-cap'>
+                      <span className='crypto-token-selector__market-cap'>
                         MCap: ${(token.marketCap / 1e9).toFixed(1)}B
                       </span>
                     )}

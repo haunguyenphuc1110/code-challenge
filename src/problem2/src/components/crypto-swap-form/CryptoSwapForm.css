@@ -1,10 +1,9 @@
-.crypto-swap-container {
+.crypto-swap-form {
   min-height: 100vh;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
-.swap-form {
+.crypto-swap-form__container {
   background: var(--primary-gradient);
   backdrop-filter: blur(0.5rem);
   border-radius: 1.5rem;
@@ -13,21 +12,21 @@
     0 0 0 0.0625rem var(--shadow-white-subtle);
 }
 
-.swap-header {
+.crypto-swap-form__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
-.swap-header h2 {
+.crypto-swap-form__header h2 {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
   text-shadow: 0 0.125rem 0.25rem var(--shadow-subtle);
 }
 
-.exchange-info {
+.crypto-swap-form__exchange-info {
   display: flex;
   align-items: center;
   background: var(--surface-subtle);
@@ -39,13 +38,13 @@
   font-size: 0.875rem;
 }
 
-.trending-up-icon {
+.crypto-swap-form__trending-icon {
   width: 1rem;
   height: 1rem;
   filter: brightness(0) invert(1);
 }
 
-.error-message {
+.crypto-swap-form__message--error {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -59,17 +58,17 @@
   animation: shake 0.5s ease-in-out;
 }
 
-.alert-icon {
+.crypto-swap-form__icon--alert {
   width: 1rem;
   height: 1rem;
 }
 
-.alert-icon * {
+.crypto-swap-form__icon--alert * {
   stroke: var(--error-color) !important;
   fill: none !important;
 }
 
-.success-message {
+.crypto-swap-form__message--success {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -83,12 +82,12 @@
   animation: slideInUp 1s ease-out;
 }
 
-.success-icon {
+.crypto-swap-form__icon--success {
   width: 1.25rem;
   height: 1.25rem;
 }
 
-.success-icon * {
+.crypto-swap-form__icon--success * {
   stroke: var(--success-color) !important;
   fill: var(--success-color) !important;
 }
@@ -135,17 +134,17 @@
 
 /* Responsive Design */
 @media (max-width: 40rem) {
-  .crypto-swap-container {
+  .crypto-swap-form {
     padding: 1rem;
     min-height: 100vh;
     overflow-y: auto;
   }
 
-  .swap-form {
+  .crypto-swap-form__container {
     padding: 1.5rem;
   }
 
-  .swap-header {
+  .crypto-swap-form__header {
     flex-direction: column;
     gap: 0.75rem;
     align-items: flex-start;
@@ -171,7 +170,7 @@
 }
 
 @media (max-width: 30rem) {
-  .swap-form {
+  .crypto-swap-form__container {
     padding: 1.25rem;
     border-radius: 1rem;
   }
@@ -180,7 +179,7 @@
     padding: 1rem;
   }
 
-  .swap-header h2 {
+  .crypto-swap-form__header h2 {
     font-size: 1.25rem;
   }
 }

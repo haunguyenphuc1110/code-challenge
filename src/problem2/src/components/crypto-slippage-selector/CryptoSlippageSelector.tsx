@@ -9,9 +9,10 @@ type Props = {
 
 const CryptoSlippageSelector: React.FC<Props> = ({ slippage, setSlippage }) => {
   return (
-    <div className='slippage-selector'>
+    <div className='crypto-slippage-selector'>
       <span>Slippage: </span>
       <select
+        className='crypto-slippage-selector__select'
         value={slippage}
         onChange={e => setSlippage(Number(e.target.value))}
       >

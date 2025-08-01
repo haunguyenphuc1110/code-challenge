@@ -1,34 +1,30 @@
-.swap-icon-button {
+.crypto-swap-exchange {
   background: var(--secondary-gradient);
   border: 0.0625rem solid var(--border-secondary);
   border-radius: 3rem;
-  overflow: hidden;
   width: 3rem;
   height: 3rem;
   margin: 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.swap-icon-button:focus {
+.crypto-swap-exchange:focus {
   outline: none;
   border-color: var(--border-hover);
   box-shadow: 0 0 0 0.125rem var(--shadow-secondary);
 }
 
-.swap-icon {
+.crypto-swap-exchange__icon {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.swap-icon * {
+.crypto-swap-exchange__icon * {
   stroke: var(--pure-white) !important;
 }
 
-.swap-icon-button:hover {
+.crypto-swap-exchange:hover {
   transform: rotate(180deg) scale(1.1);
   box-shadow: 0 0.5rem 1.5625rem var(--shadow-secondary-hover);
   border: none;

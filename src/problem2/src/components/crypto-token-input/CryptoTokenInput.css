@@ -1,17 +1,16 @@
-.token-input-section {
+.crypto-token-input {
   background: var(--surface-primary);
   border-radius: 1rem;
   padding: 1.25rem;
-  margin-bottom: 0.5rem;
   border: 0.0625rem solid var(--border-primary);
 }
 
-.token-input-section:hover {
+.crypto-token-input:hover {
   background: var(--surface-hover);
   border-color: var(--border-secondary);
 }
 
-.token-input-header {
+.crypto-token-input__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,18 +19,18 @@
   color: var(--text-secondary);
 }
 
-.balance {
+.crypto-token-input__balance {
   font-size: 0.75rem;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
 }
 
-.token-input {
+.crypto-token-input__input-container {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.token-selector {
+.crypto-token-input__token-selector {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -42,34 +41,34 @@
   min-width: 8.75rem;
 }
 
-.token-selector:hover {
+.crypto-token-input__token-selector:hover {
   background: var(--surface-hover-enhanced);
   border-color: var(--border-focus);
 }
 
-.token-selector-icon {
+.crypto-token-input__token-selector-icon {
   width: 2rem;
   height: 2rem;
 }
 
-.token-info {
+.crypto-token-input__token-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.token-symbol {
+.crypto-token-input__token-symbol {
   color: var(--pure-white);
   font-weight: 600;
   font-size: 1rem;
 }
 
-.token-name {
+.crypto-token-input__token-name {
   color: var(--text-tertiary);
   font-size: 0.75rem;
 }
 
-.amount-input {
+.crypto-token-input__amount-input {
   flex: 1;
   background: var(--surface-subtle);
   border: 0.0625rem solid var(--border-primary);
@@ -80,24 +79,24 @@
   text-align: right;
 }
 
-.amount-input:focus {
+.crypto-token-input__amount-input:focus {
   outline: none;
   border-color: var(--border-focus);
   background: var(--surface-secondary);
   box-shadow: 0 0 0 0.1875rem var(--shadow-white-subtle);
 }
 
-.amount-input.readonly {
+.crypto-token-input__amount-input--readonly {
   background: var(--surface-minimal);
   border-color: var(--border-subtle);
   color: var(--text-readonly);
 }
 
-.amount-input::placeholder {
+.crypto-token-input__amount-input::placeholder {
   color: var(--text-muted);
 }
 
-.max-button {
+.crypto-token-input__max-button {
   display: flex;
   background: var(--accent-gradient);
   border: none;
@@ -110,6 +109,6 @@
   width: fit-content;
 }
 
-.max-button:hover {
+.crypto-token-input__max-button:hover {
   box-shadow: 0 0.25rem 0.75rem var(--shadow-accent);
 }

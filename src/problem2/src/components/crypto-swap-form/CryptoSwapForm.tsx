@@ -129,9 +129,9 @@ const CryptoSwapForm: React.FC = () => {
   const exchangeRate = swapState.fromToken.price / swapState.toToken.price;
 
   return (
-    <div className='crypto-swap-container'>
-      <div className='swap-form'>
-        <div className='swap-header'>
+    <div className='crypto-swap-form'>
+      <div className='crypto-swap-form__container'>
+        <div className='crypto-swap-form__header'>
           <h2>Swap Tokens</h2>
 
           <CryptoSlippageSelector
@@ -167,8 +167,8 @@ const CryptoSwapForm: React.FC = () => {
 
         {/* Exchange Rate Info */}
         {swapState.fromAmount && (
-          <div className='exchange-info'>
-            <TrendingUpIcon className='trending-up-icon' />
+          <div className='crypto-swap-form__exchange-info'>
+            <TrendingUpIcon className='crypto-swap-form__trending-icon' />
             <span>
               1 {swapState.fromToken.symbol} = {exchangeRate.toFixed(6)}{' '}
               {swapState.toToken.symbol}
@@ -178,16 +178,16 @@ const CryptoSwapForm: React.FC = () => {
 
         {/* Error Message */}
         {swapState.error && (
-          <div className='error-message'>
-            <AlertCircleIcon className='alert-icon' />
+          <div className='crypto-swap-form__message--error'>
+            <AlertCircleIcon className='crypto-swap-form__icon--alert' />
             <span>{swapState.error}</span>
           </div>
         )}
 
         {/* Success Message */}
         {swapState.success && (
-          <div className='success-message'>
-            <CheckCircleIcon className='success-icon' />
+          <div className='crypto-swap-form__message--success'>
+            <CheckCircleIcon className='crypto-swap-form__icon--success' />
             <span>Swap completed successfully!</span>
           </div>
         )}

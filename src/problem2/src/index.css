@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* === COLOR SYSTEM === */
+  --global-gradient: linear-gradient(
+    135deg,
+    #1e3c72 0%,
+    #2a5298 50%,
+    #667eea 100%
+  );
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --secondary-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
   --accent-gradient: linear-gradient(135deg, #ff6b6b, #ee5a24);
@@ -67,4 +73,5 @@ body {
   place-items: center;
   min-width: 20rem;
   min-height: 100vh;
+  background: var(--global-gradient);
 }

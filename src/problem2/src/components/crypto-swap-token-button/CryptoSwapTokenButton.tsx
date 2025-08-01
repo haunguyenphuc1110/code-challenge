@@ -15,13 +15,15 @@ const CryptoSwapTokenButton: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`swap-button ${isLoading ? 'loading' : ''}`}
+      className={`crypto-swap-button ${
+        isLoading ? 'crypto-swap-button--loading' : ''
+      }`}
       onClick={handleSwap}
       disabled={disabled}
     >
       {isLoading ? (
         <>
-          <div className='spinner'></div>
+          <div className='crypto-swap-button__spinner'></div>
           Processing...
         </>
       ) : (

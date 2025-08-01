@@ -1,4 +1,4 @@
-.slippage-selector {
+.crypto-slippage-selector {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -6,7 +6,7 @@
   font-size: 0.875rem;
 }
 
-.slippage-selector select {
+.crypto-slippage-selector__select {
   background: var(--surface-secondary);
   border: 0.0625rem solid var(--border-secondary);
   border-radius: 0.5rem;

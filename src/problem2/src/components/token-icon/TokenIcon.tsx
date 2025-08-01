@@ -17,13 +17,13 @@ const TokenIcon: React.FC<TokenIconProps> = ({
 }) => {
   return (
     <div
-      className={`token-icon-container ${className}`}
+      className={`token-icon ${className}`}
       style={{ width: size, height: size }}
     >
       <img
         src={token.iconUrl}
         alt={`${token.name} icon`}
-        className='token-icon-svg'
+        className='token-icon__image'
         width={size}
         height={size}
       />

@@ -1,4 +1,4 @@
-.token-selector-overlay {
+.crypto-token-selector {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,30 +13,30 @@
   animation: fadeIn 0.3s ease-out;
 }
 
-.token-selector-modal {
+.crypto-token-selector__modal {
   background: var(--modal-gradient);
   border-radius: 1.25rem;
   padding: 1.5rem;
-  width: 30%;
+  width: 35%;
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 1.5625rem 3.125rem var(--shadow-medium);
   animation: slideInUp 0.3s ease-out;
 }
 
-.token-selector-modal h3 {
+.crypto-token-selector__modal h3 {
   margin: 0 0 1.25rem 0;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.token-list {
+.crypto-token-selector__list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.token-option {
+.crypto-token-selector__option {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -49,47 +49,43 @@
   transition: all 0.2s ease;
 }
 
-.token-option:hover {
+.crypto-token-selector__option:hover {
   background: var(--surface-secondary);
   border-color: var(--border-secondary);
 }
 
-.token-option-icon {
-  flex-shrink: 0;
-}
-
-.token-details {
+.crypto-token-selector__details {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.token-main-info {
+.crypto-token-selector__main-info {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.token-identity {
+.crypto-token-selector__identity {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.token-symbol {
+.crypto-token-selector__symbol {
   color: var(--pure-white);
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 0.125rem;
 }
 
-.token-name {
+.crypto-token-selector__name {
   color: var(--text-tertiary);
   font-size: 0.875rem;
 }
 
-.token-change {
+.crypto-token-selector__change {
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.125rem 0.375rem;
@@ -97,55 +93,50 @@
   background: var(--surface-secondary);
 }
 
-.token-change.positive {
+.crypto-token-selector__change--positive {
   color: var(--success-color);
   background: var(--success-background);
 }
 
-.token-change.negative {
+.crypto-token-selector__change--negative {
   color: var(--error-color);
   background: var(--error-background);
 }
 
-.token-financial-info {
+.crypto-token-selector__financial-info {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.token-balance {
+.crypto-token-selector__balance {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  gap: 0.25rem;
 }
 
-.balance-amount {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.875rem;
+.crypto-token-selector__balance-amount {
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
-.balance-symbol {
-  color: rgba(255, 255, 255, 0.6);
+.crypto-token-selector__balance-symbol {
   font-size: 0.75rem;
-  margin-top: 0.125rem;
 }
 
-.token-price-info {
+.crypto-token-selector__price-info {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
 }
 
-.token-price {
-  color: rgba(255, 255, 255, 0.9);
+.crypto-token-selector__price {
   font-size: 0.875rem;
   font-weight: 500;
 }
 
-.token-market-cap {
-  color: rgba(255, 255, 255, 0.6);
+.crypto-token-selector__market-cap {
+  color: var(--text-tertiary);
   font-size: 0.75rem;
-  margin-top: 0.125rem;
+  margin-top: 0.25rem;
 }

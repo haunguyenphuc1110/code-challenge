@@ -10,8 +10,8 @@ type Props = {
 
 const CryptoSwapExchangeButton: React.FC<Props> = ({ handleTokenSwap }) => {
   return (
-    <button className='swap-icon-button' onClick={handleTokenSwap}>
-      <SwapVerticalIcon className='swap-icon' />
+    <button className='crypto-swap-exchange' onClick={handleTokenSwap}>
+      <SwapVerticalIcon className='crypto-swap-exchange__icon' />
     </button>
   );
 };
