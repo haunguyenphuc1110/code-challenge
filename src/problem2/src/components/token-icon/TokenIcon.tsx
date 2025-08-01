@@ -1,6 +1,8 @@
-import React from "react";
-import type { Token } from "@/models/Crypto";
-import "./TokenIcon.css";
+import React from 'react';
+
+import type { Token } from '@/models/Crypto';
+
+import './TokenIcon.css';
 
 interface TokenIconProps {
   token: Token;
@@ -11,7 +13,7 @@ interface TokenIconProps {
 const TokenIcon: React.FC<TokenIconProps> = ({
   token,
   size = 32,
-  className = "",
+  className = '',
 }) => {
   return (
     <div
@@ -21,7 +23,7 @@ const TokenIcon: React.FC<TokenIconProps> = ({
       <img
         src={token.iconUrl}
         alt={`${token.name} icon`}
-        className="token-icon-svg"
+        className='token-icon-svg'
         width={size}
         height={size}
       />

@@ -1,6 +1,6 @@
 .swap-icon-button {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  border: 0.0625rem solid rgba(255, 255, 255, 0.2);
+  background: var(--secondary-gradient);
+  border: 0.0625rem solid var(--border-secondary);
   border-radius: 3rem;
   overflow: hidden;
   width: 3rem;
@@ -15,8 +15,8 @@
 
 .swap-icon-button:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 0.125rem rgba(79, 172, 254, 0.3);
+  border-color: var(--border-hover);
+  box-shadow: 0 0 0 0.125rem var(--shadow-secondary);
 }
 
 .swap-icon {
@@ -25,11 +25,11 @@
 }
 
 .swap-icon * {
-  stroke: #ffffff !important;
+  stroke: var(--pure-white) !important;
 }
 
 .swap-icon-button:hover {
   transform: rotate(180deg) scale(1.1);
-  box-shadow: 0 0.5rem 1.5625rem rgba(79, 172, 254, 0.4);
+  box-shadow: 0 0.5rem 1.5625rem var(--shadow-secondary-hover);
   border: none;
 }

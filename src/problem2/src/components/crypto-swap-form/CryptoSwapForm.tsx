@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import "./CryptoSwapForm.css";
-import CryptoSlippageSelector from "@/components/crypto-slippage-selector/CryptoSlippageSelector";
-import CryptoTokenInput from "@/components/crypto-token-input/CryptoTokenInput";
-import { CryptoTokenInputType } from "@/constants/CryptoEnum";
-import type { SwapState, Token } from "@/models/Crypto";
-import TrendingUpIcon from "@/assets/trending-up.svg?react";
-import AlertCircleIcon from "@/assets/alert-circle.svg?react";
-import CheckCircleIcon from "@/assets/check-circle.svg?react";
+import React, { useEffect, useState } from 'react';
 
-import CryptoSwapExchangeButton from "@/components/crypto-swap-exchange-button/CryptoSwapExchangeButton";
-import CryptoSwapTokenButton from "@/components/crypto-swap-token-button/CryptoSwapTokenButton";
-import CryptoTokenSelector from "@/components/crypto-token-selector/CryptoTokenSelector";
+import AlertCircleIcon from '@/assets/alert-circle.svg?react';
+import CheckCircleIcon from '@/assets/check-circle.svg?react';
+import TrendingUpIcon from '@/assets/trending-up.svg?react';
+import CryptoSlippageSelector from '@/components/crypto-slippage-selector/CryptoSlippageSelector';
+import CryptoSwapExchangeButton from '@/components/crypto-swap-exchange-button/CryptoSwapExchangeButton';
+import CryptoSwapTokenButton from '@/components/crypto-swap-token-button/CryptoSwapTokenButton';
+import CryptoTokenInput from '@/components/crypto-token-input/CryptoTokenInput';
+import CryptoTokenSelector from '@/components/crypto-token-selector/CryptoTokenSelector';
+import { CryptoTokenInputType } from '@/constants/CryptoEnum';
+import type { SwapState, Token } from '@/models/Crypto';
+import { createTokens } from '@/utils/tokenUtils';
 
-import { createTokens } from "@/utils/tokenUtils";
+import './CryptoSwapForm.css';
 
 const MOCK_TOKENS: Token[] = createTokens();
 
@@ -20,17 +20,16 @@ const CryptoSwapForm: React.FC = () => {
   const [swapState, setSwapState] = useState<SwapState>({
     fromToken: MOCK_TOKENS[0],
     toToken: MOCK_TOKENS[1],
-    fromAmount: "",
-    toAmount: "",
+    fromAmount: '',
+    toAmount: '',
     slippage: 0.5,
     isLoading: false,
     error: null,
     success: false,
   });
 
-  const [showTokenSelector, setShowTokenSelector] = useState<
-    "from" | "to" | null
-  >(null);
+  const [showTokenSelector, setShowTokenSelector] =
+    useState<CryptoTokenInputType | null>(null);
 
   // Calculate exchange rate and amounts
   useEffect(() => {
@@ -40,14 +39,14 @@ const CryptoSwapForm: React.FC = () => {
       const toAmount = fromValue / swapState.toToken.price;
       const slippageAdjusted = toAmount * (1 - swapState.slippage / 100);
 
-      setSwapState((prev) => ({
+      setSwapState(prev => ({
         ...prev,
         toAmount: slippageAdjusted.toFixed(6),
       }));
-    } else if (swapState.fromAmount === "") {
-      setSwapState((prev) => ({
+    } else if (swapState.fromAmount === '') {
+      setSwapState(prev => ({
         ...prev,
-        toAmount: "",
+        toAmount: '',
       }));
     }
   }, [
@@ -57,19 +56,19 @@ const CryptoSwapForm: React.FC = () => {
     swapState.slippage,
   ]);
 
-  const handleAmountChange = (value: string, field: "from" | "to") => {
+  const handleAmountChange = (value: string, field: CryptoTokenInputType) => {
     // Input validation
     if (value && !/^\d*\.?\d*$/.test(value)) return;
 
-    setSwapState((prev) => ({
+    setSwapState(prev => ({
       ...prev,
-      [field === "from" ? "fromAmount" : "toAmount"]: value,
+      [field === CryptoTokenInputType.FROM ? 'fromAmount' : 'toAmount']: value,
       error: null,
     }));
   };
 
   const handleTokenSwap = () => {
-    setSwapState((prev) => ({
+    setSwapState(prev => ({
       ...prev,
       fromToken: prev.toToken,
       toToken: prev.fromToken,
@@ -80,23 +79,23 @@ const CryptoSwapForm: React.FC = () => {
   };
 
   const handleTokenSelect = (token: Token) => {
-    if (showTokenSelector === "from") {
-      setSwapState((prev) => ({ ...prev, fromToken: token }));
-    } else if (showTokenSelector === "to") {
-      setSwapState((prev) => ({ ...prev, toToken: token }));
+    if (showTokenSelector === CryptoTokenInputType.FROM) {
+      setSwapState(prev => ({ ...prev, fromToken: token }));
+    } else if (showTokenSelector === CryptoTokenInputType.TO) {
+      setSwapState(prev => ({ ...prev, toToken: token }));
     }
     setShowTokenSelector(null);
   };
 
   const validateSwap = (): string | null => {
     if (!swapState.fromAmount || Number(swapState.fromAmount) <= 0) {
-      return "Please enter a valid amount";
+      return 'Please enter a valid amount';
     }
     if (Number(swapState.fromAmount) > swapState.fromToken.balance) {
       return `Insufficient ${swapState.fromToken.symbol} balance`;
     }
     if (swapState.fromToken.symbol === swapState.toToken.symbol) {
-      return "Cannot swap the same token";
+      return 'Cannot swap the same token';
     }
     return null;
   };
@@ -104,41 +103,41 @@ const CryptoSwapForm: React.FC = () => {
   const handleSwap = async () => {
     const error = validateSwap();
     if (error) {
-      setSwapState((prev) => ({ ...prev, error }));
+      setSwapState(prev => ({ ...prev, error }));
       return;
     }
 
-    setSwapState((prev) => ({ ...prev, isLoading: true, error: null }));
+    setSwapState(prev => ({ ...prev, isLoading: true, error: null }));
 
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
-    setSwapState((prev) => ({
+    setSwapState(prev => ({
       ...prev,
       isLoading: false,
       success: true,
-      fromAmount: "",
-      toAmount: "",
+      fromAmount: '',
+      toAmount: '',
     }));
 
     // Reset success state after 3 seconds
     setTimeout(() => {
-      setSwapState((prev) => ({ ...prev, success: false }));
+      setSwapState(prev => ({ ...prev, success: false }));
     }, 3000);
   };
 
   const exchangeRate = swapState.fromToken.price / swapState.toToken.price;
 
   return (
-    <div className="crypto-swap-container">
-      <div className="swap-form">
-        <div className="swap-header">
+    <div className='crypto-swap-container'>
+      <div className='swap-form'>
+        <div className='swap-header'>
           <h2>Swap Tokens</h2>
 
           <CryptoSlippageSelector
             slippage={swapState.slippage}
-            setSlippage={(slippage) =>
-              setSwapState((prev) => ({ ...prev, slippage }))
+            setSlippage={slippage =>
+              setSwapState(prev => ({ ...prev, slippage }))
             }
           />
         </div>
@@ -161,17 +160,17 @@ const CryptoSwapForm: React.FC = () => {
           token={swapState.toToken}
           amount={swapState.toAmount}
           field={CryptoTokenInputType.TO}
-          disabled={swapState.isLoading}
+          disabled
           handleAmountChange={handleAmountChange}
           handleShowTokenSelector={setShowTokenSelector}
         />
 
         {/* Exchange Rate Info */}
         {swapState.fromAmount && (
-          <div className="exchange-info">
-            <TrendingUpIcon className="trending-up-icon" />
+          <div className='exchange-info'>
+            <TrendingUpIcon className='trending-up-icon' />
             <span>
-              1 {swapState.fromToken.symbol} = {exchangeRate.toFixed(6)}{" "}
+              1 {swapState.fromToken.symbol} = {exchangeRate.toFixed(6)}{' '}
               {swapState.toToken.symbol}
             </span>
           </div>
@@ -179,16 +178,16 @@ const CryptoSwapForm: React.FC = () => {
 
         {/* Error Message */}
         {swapState.error && (
-          <div className="error-message">
-            <AlertCircleIcon className="alert-icon" />
+          <div className='error-message'>
+            <AlertCircleIcon className='alert-icon' />
             <span>{swapState.error}</span>
           </div>
         )}
 
         {/* Success Message */}
         {swapState.success && (
-          <div className="success-message">
-            <CheckCircleIcon className="success-icon" />
+          <div className='success-message'>
+            <CheckCircleIcon className='success-icon' />
             <span>Swap completed successfully!</span>
           </div>
         )}

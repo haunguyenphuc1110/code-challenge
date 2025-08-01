@@ -1,6 +1,6 @@
 export const CryptoTokenInputType = {
-  FROM: "from",
-  TO: "to",
+  FROM: 'from',
+  TO: 'to',
 } as const;
 
 export type CryptoTokenInputType =

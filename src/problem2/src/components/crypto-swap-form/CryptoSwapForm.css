@@ -1,16 +1,16 @@
 .crypto-swap-container {
   min-height: 100vh;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 .swap-form {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient);
   backdrop-filter: blur(0.5rem);
   border-radius: 1.5rem;
   padding: 2rem;
-  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1),
-    0 0 0 0.0625rem rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1.25rem 2.5rem var(--shadow-subtle),
+    0 0 0 0.0625rem var(--shadow-white-subtle);
 }
 
 .swap-header {
@@ -24,17 +24,17 @@
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
-  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0.125rem 0.25rem var(--shadow-subtle);
 }
 
 .exchange-info {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-subtle);
   border-radius: 0.75rem;
   padding: 1rem;
   margin: 1rem 0;
-  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border: 0.0625rem solid var(--border-primary);
   gap: 0.5rem;
   font-size: 0.875rem;
 }
@@ -49,11 +49,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 59, 48, 0.1);
-  border: 0.0625rem solid rgba(255, 59, 48, 0.3);
+  background: var(--error-background);
+  border: 0.0625rem solid var(--error-border);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
-  color: #ff6b6b;
+  color: var(--error-color);
   font-size: 0.875rem;
   margin: 1rem 0;
   animation: shake 0.5s ease-in-out;
@@ -65,7 +65,7 @@
 }
 
 .alert-icon * {
-  stroke: #ff6b6b !important;
+  stroke: var(--error-color) !important;
   fill: none !important;
 }
 
@@ -73,11 +73,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(52, 199, 89, 0.1);
-  border: 0.0625rem solid rgba(52, 199, 89, 0.3);
+  background: var(--success-background);
+  border: 0.0625rem solid var(--success-border);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
-  color: #34c759;
+  color: var(--success-color);
   font-size: 0.875rem;
   margin: 1rem 0;
   animation: slideInUp 1s ease-out;
@@ -89,8 +89,8 @@
 }
 
 .success-icon * {
-  stroke: #34c759 !important;
-  fill: #34c759 !important;
+  stroke: var(--success-color) !important;
+  fill: var(--success-color) !important;
 }
 
 /* Animations */

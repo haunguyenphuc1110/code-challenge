@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--overlay-background);
   backdrop-filter: blur(0.25rem);
   display: flex;
   align-items: center;
@@ -14,13 +14,13 @@
 }
 
 .token-selector-modal {
-  background: linear-gradient(135deg, #2d1b69, #1a1a2e);
+  background: var(--modal-gradient);
   border-radius: 1.25rem;
   padding: 1.5rem;
   width: 30%;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1.5625rem 3.125rem var(--shadow-medium);
   animation: slideInUp 0.3s ease-out;
 }
 
@@ -40,8 +40,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-subtle);
+  border: 0.0625rem solid var(--border-primary);
   border-radius: 0.75rem;
   padding: 1.25rem;
   cursor: pointer;
@@ -50,8 +50,8 @@
 }
 
 .token-option:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--surface-secondary);
+  border-color: var(--border-secondary);
 }
 
 .token-option-icon {
@@ -78,14 +78,14 @@
 }
 
 .token-symbol {
-  color: white;
+  color: var(--pure-white);
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 0.125rem;
 }
 
 .token-name {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-tertiary);
   font-size: 0.875rem;
 }
 
@@ -94,17 +94,17 @@
   font-weight: 600;
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--surface-secondary);
 }
 
 .token-change.positive {
-  color: #34c759;
-  background: rgba(52, 199, 89, 0.1);
+  color: var(--success-color);
+  background: var(--success-background);
 }
 
 .token-change.negative {
-  color: #ff6b6b;
-  background: rgba(255, 107, 107, 0.1);
+  color: var(--error-color);
+  background: var(--error-background);
 }
 
 .token-financial-info {

@@ -1,5 +1,6 @@
-import React from "react";
-import "./CryptoSwapTokenButton.css";
+import React from 'react';
+
+import './CryptoSwapTokenButton.css';
 
 type Props = {
   disabled: boolean;
@@ -14,17 +15,17 @@ const CryptoSwapTokenButton: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`swap-button ${isLoading ? "loading" : ""}`}
+      className={`swap-button ${isLoading ? 'loading' : ''}`}
       onClick={handleSwap}
       disabled={disabled}
     >
       {isLoading ? (
         <>
-          <div className="spinner"></div>
+          <div className='spinner'></div>
           Processing...
         </>
       ) : (
-        "Swap Tokens"
+        'Swap Tokens'
       )}
     </button>
   );

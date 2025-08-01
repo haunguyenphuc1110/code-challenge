@@ -1,10 +1,11 @@
-import CryptoSwapForm from "./components/cryto-swap-form/CryptoSwapForm";
-import "./App.css";
+import CryptoSwapForm from './components/crypto-swap-form/CryptoSwapForm';
+
+import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <div className="app-header">
+    <div className='app'>
+      <div className='app-header'>
         <h1>Crypto Token Swap</h1>
         <p>Exchange your tokens seamlessly</p>
       </div>

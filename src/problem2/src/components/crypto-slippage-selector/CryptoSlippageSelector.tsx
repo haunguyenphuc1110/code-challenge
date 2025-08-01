@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./CryptoSlippageSelector.css";
+import './CryptoSlippageSelector.css';
 
 type Props = {
   slippage: number;
@@ -9,11 +9,11 @@ type Props = {
 
 const CryptoSlippageSelector: React.FC<Props> = ({ slippage, setSlippage }) => {
   return (
-    <div className="slippage-selector">
+    <div className='slippage-selector'>
       <span>Slippage: </span>
       <select
         value={slippage}
-        onChange={(e) => setSlippage(Number(e.target.value))}
+        onChange={e => setSlippage(Number(e.target.value))}
       >
         <option value={0.1}>0.1%</option>
         <option value={0.5}>0.5%</option>
