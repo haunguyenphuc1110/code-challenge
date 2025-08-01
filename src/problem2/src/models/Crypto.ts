@@ -1,9 +1,12 @@
 export interface Token {
   symbol: string;
   name: string;
-  icon: string;
+  iconUrl: string;
+  decimals: number;
   price: number;
   balance: number;
+  marketCap?: number;
+  change24h?: number;
 }
 
 export interface SwapState {

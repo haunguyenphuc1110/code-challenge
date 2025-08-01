@@ -22,7 +22,10 @@
 .swap-icon {
   width: 1.5rem;
   height: 1.5rem;
-  filter: brightness(0) invert(1);
+}
+
+.swap-icon * {
+  stroke: #ffffff !important;
 }
 
 .swap-icon-button:hover {

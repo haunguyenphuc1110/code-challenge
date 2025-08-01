@@ -2,6 +2,7 @@ import React from "react";
 
 import type { Token } from "../../models/Crypto";
 import { CryptoTokenInputType } from "../../constants/CryptoEnum";
+import TokenIcon from "../token-icon/TokenIcon";
 import "./CryptoTokenInput.css";
 
 type Props = {
@@ -34,7 +35,7 @@ const CryptoTokenInput: React.FC<Props> = ({
           className="token-selector"
           onClick={() => handleShowTokenSelector(field)}
         >
-          <span className="token-icon">{token.icon}</span>
+          <TokenIcon token={token} size={32} className="token-selector-icon" />
           <span className="token-info">
             <span className="token-symbol">{token.symbol}</span>
             <span className="token-name">{token.name}</span>

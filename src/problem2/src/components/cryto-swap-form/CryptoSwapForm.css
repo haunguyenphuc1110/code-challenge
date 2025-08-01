@@ -21,7 +21,6 @@
 }
 
 .swap-header h2 {
-  color: white;
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
@@ -37,7 +36,6 @@
   margin: 1rem 0;
   border: 0.0625rem solid rgba(255, 255, 255, 0.1);
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
 }
 
@@ -93,83 +91,6 @@
 .success-icon * {
   stroke: #34c759 !important;
   fill: #34c759 !important;
-}
-
-/* Token Selector Modal */
-.token-selector-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(0.25rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.token-selector-modal {
-  background: linear-gradient(135deg, #2d1b69, #1a1a2e);
-  border-radius: 1.25rem;
-  padding: 1.5rem;
-  width: 30%;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.3);
-  animation: slideInUp 0.3s ease-out;
-}
-
-.token-selector-modal h3 {
-  color: white;
-  margin: 0 0 1.25rem 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.token-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.token-option {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  cursor: pointer;
-  width: 100%;
-}
-
-.token-option:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.token-details {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.token-balance {
-  text-align: right;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-}
-
-.token-price {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.75rem;
-  display: block;
-  margin-top: 0.125rem;
 }
 
 /* Animations */

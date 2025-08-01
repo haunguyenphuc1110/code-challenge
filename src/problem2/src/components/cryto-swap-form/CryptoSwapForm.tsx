@@ -10,26 +10,16 @@ import CheckCircleIcon from "../../assets/check-circle.svg?react";
 
 import CryptoSwapExchangeButton from "../crypto-swap-exchange-button/CryptoSwapExchangeButton";
 import CryptoSwapTokenButton from "../crypto-swap-token-button/CryptoSwapTokenButton";
+import CryptoTokenSelector from "../crypto-token-selector/CryptoTokenSelector";
 
-const MOCK_TOKENS: Token[] = [
-  { symbol: "ETH", name: "Ethereum", icon: "🔷", price: 2000, balance: 5.2 },
-  { symbol: "BTC", name: "Bitcoin", icon: "₿", price: 35000, balance: 0.15 },
-  { symbol: "USDC", name: "USD Coin", icon: "💵", price: 1, balance: 1250 },
-  { symbol: "USDT", name: "Tether", icon: "💰", price: 1, balance: 800 },
-  {
-    symbol: "BNB",
-    name: "Binance Coin",
-    icon: "🟡",
-    price: 300,
-    balance: 12.5,
-  },
-  { symbol: "ADA", name: "Cardano", icon: "🔵", price: 0.5, balance: 2000 },
-];
+import { createTokens } from "../../utils/tokenUtils";
+
+const MOCK_TOKENS: Token[] = createTokens();
 
 const CryptoSwapForm: React.FC = () => {
   const [swapState, setSwapState] = useState<SwapState>({
     fromToken: MOCK_TOKENS[0],
-    toToken: MOCK_TOKENS[2],
+    toToken: MOCK_TOKENS[1],
     fromAmount: "",
     toAmount: "",
     slippage: 0.5,
@@ -213,40 +203,11 @@ const CryptoSwapForm: React.FC = () => {
 
       {/* Token Selector Modal */}
       {showTokenSelector && (
-        <div
-          className="token-selector-overlay"
-          onClick={() => setShowTokenSelector(null)}
-        >
-          <div
-            className="token-selector-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3>Select Token</h3>
-            <div className="token-list">
-              {MOCK_TOKENS.map((token) => (
-                <button
-                  key={token.symbol}
-                  className="token-option"
-                  onClick={() => handleTokenSelect(token)}
-                >
-                  <span className="token-icon">{token.icon}</span>
-                  <div className="token-details">
-                    <div className="token-info">
-                      <span className="token-symbol">{token.symbol}</span>
-                      <span className="token-name">{token.name}</span>
-                    </div>
-                    <div className="token-balance">
-                      <span>{token.balance.toFixed(4)}</span>
-                      <span className="token-price">
-                        ${token.price.toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
+        <CryptoTokenSelector
+          tokens={MOCK_TOKENS}
+          setShowTokenSelector={setShowTokenSelector}
+          handleTokenSelect={handleTokenSelect}
+        />
       )}
     </div>
   );
