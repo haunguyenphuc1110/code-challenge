@@ -1,0 +1,123 @@
+.token-input-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 0.5rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+}
+
+.token-input-section:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.token-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.balance {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.token-input {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.token-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  min-width: 8.75rem;
+}
+
+.token-selector:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.token-icon {
+  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.token-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.token-symbol {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.token-name {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+}
+
+.amount-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.amount-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 0.1875rem rgba(255, 255, 255, 0.1);
+}
+
+.amount-input.readonly {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.amount-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.max-button {
+  display: flex;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-left: auto;
+  width: fit-content;
+}
+
+.max-button:hover {
+  box-shadow: 0 0.25rem 0.75rem rgba(255, 107, 107, 0.3);
+}

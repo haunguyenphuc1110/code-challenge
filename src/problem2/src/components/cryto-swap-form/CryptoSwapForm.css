@@ -1,0 +1,265 @@
+.crypto-swap-container {
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.swap-form {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  backdrop-filter: blur(0.5rem);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1),
+    0 0 0 0.0625rem rgba(255, 255, 255, 0.1);
+}
+
+.swap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.swap-header h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.exchange-info {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.trending-up-icon {
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 59, 48, 0.1);
+  border: 0.0625rem solid rgba(255, 59, 48, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  animation: shake 0.5s ease-in-out;
+}
+
+.alert-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.alert-icon * {
+  stroke: #ff6b6b !important;
+  fill: none !important;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(52, 199, 89, 0.1);
+  border: 0.0625rem solid rgba(52, 199, 89, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #34c759;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  animation: slideInUp 1s ease-out;
+}
+
+.success-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.success-icon * {
+  stroke: #34c759 !important;
+  fill: #34c759 !important;
+}
+
+/* Token Selector Modal */
+.token-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(0.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.token-selector-modal {
+  background: linear-gradient(135deg, #2d1b69, #1a1a2e);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  width: 30%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.3);
+  animation: slideInUp 0.3s ease-out;
+}
+
+.token-selector-modal h3 {
+  color: white;
+  margin: 0 0 1.25rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.token-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.token-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.token-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.token-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.token-balance {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.token-price {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 0.125rem;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.3125rem);
+  }
+  75% {
+    transform: translateX(0.3125rem);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 40rem) {
+  .crypto-swap-container {
+    padding: 1rem;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .swap-form {
+    padding: 1.5rem;
+  }
+
+  .swap-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .token-input {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .token-selector {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .amount-input {
+    text-align: left;
+  }
+
+  .max-button {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 30rem) {
+  .swap-form {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .token-input-section {
+    padding: 1rem;
+  }
+
+  .swap-header h2 {
+    font-size: 1.25rem;
+  }
+}

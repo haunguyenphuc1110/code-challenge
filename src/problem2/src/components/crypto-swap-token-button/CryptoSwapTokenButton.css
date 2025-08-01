@@ -1,0 +1,41 @@
+.swap-button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: 1.125rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.swap-button:hover:not(:disabled) {
+  box-shadow: 0 0.75rem 1.875rem rgba(102, 126, 234, 0.4);
+}
+
+.swap-button:disabled {
+  opacity: 0.6;
+  transform: none;
+}
+
+.swap-button.loading {
+  background: linear-gradient(135deg, #a8a8a8, #888888);
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.3);
+  border-top: 0.125rem solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
